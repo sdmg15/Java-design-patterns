@@ -34,5 +34,3 @@ __What is a Design Pattern ?__
        }
 
      }
-
-     
