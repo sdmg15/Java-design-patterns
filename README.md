@@ -48,7 +48,7 @@ Classes are in the package `com.Singleton`;
 
         import  com.singleton.SingletonThreadSafe;
 
-
+      public class SingletonTest {
         public static void main(String[] args){
 
           SingletonThreadSafe sing = SingletonThreadSafe.getInstance();
@@ -62,4 +62,6 @@ Classes are in the package `com.Singleton`;
 
           //What the hell, the two instances have the same reference :o
         }
+      }
     ```
+# Pattern Factory
