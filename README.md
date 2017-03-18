@@ -3,7 +3,9 @@
 Here's is an implementation of some Design Patterns from scratch :p
 
 __What is a Design Pattern ?__
-   >A software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design --- Wikipedia
+   > A software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design --- Wikipedia
+
+In Java, Design Patterns are dived into tree parts : *Creational*, *Structural* and *Behavioral*.
 
 # Pattern Observer
   Code source files are available in the package `com.patternObsTest`.
@@ -34,3 +36,30 @@ __What is a Design Pattern ?__
        }
 
      }
+  ```
+
+# Pattern Singleton
+Pattern Singleton: one Class, one Instance.
+    Singleton is one of the Gangs of Four Design patterns and comes in the Creational Design Pattern category.
+There are many implementations of this pattern, but we will implement the Thread Safe one.
+Classes are in the package `com.Singleton`;
+
+    ```Java
+
+        import  com.singleton.SingletonThreadSafe;
+
+
+        public static void main(String[] args){
+
+          SingletonThreadSafe sing = SingletonThreadSafe.getInstance();
+          System.out.println(sing);
+
+          // Now let's instanciate another class
+
+          SingletonThreadSafe sing1 = SingletonThreadSafe.getInstance();
+
+          System.out.println(sing1);
+
+          //What the hell, the two instances have the same reference :o
+        }
+    ```
