@@ -1,12 +1,12 @@
 # Java Designs Pattern
 
-Here's is an implementation of some Designs Pattern from scratch.
-Code source files are available in the package `com.patternObsTest`.
+Here's is an implementation of some Design Patterns from scratch :p
 
 __What is a Design Pattern ?__
-   > a software design pattern is a general reusable solution to a commonly occurring problem within a given context in s software design --- Wikipedia
+   >A software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design --- Wikipedia
 
 # Pattern Observer
+  Code source files are available in the package `com.patternObsTest`.
   The observer pattern is a software design pattern in which an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
 
   ```java
