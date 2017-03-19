@@ -5,7 +5,7 @@ Here's is an implementation of some Design Patterns from scratch :p
 __What is a Design Pattern ?__
    > A software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design --- Wikipedia
 
-In Java, Design Patterns are dived into tree parts : *Creational*, *Structural* and *Behavioral*.
+In Java, Design Patterns are divived into tree parts : *Creational*, *Structural* and *Behavioral*.
 
 # Pattern Observer
   Code source files are available in the package `com.patternObsTest`.
@@ -39,12 +39,12 @@ In Java, Design Patterns are dived into tree parts : *Creational*, *Structural* 
   ```
 
 # Pattern Singleton
-Pattern Singleton: one Class, one Instance.
+Pattern Singleton: One Class, one Instance.
     Singleton is one of the Gangs of Four Design patterns and comes in the Creational Design Pattern category.
 There are many implementations of this pattern, but we will implement the Thread Safe one.
 Classes are in the package `com.Singleton`;
 
-    ```Java
+    ```java
 
         import  com.singleton.SingletonThreadSafe;
 
@@ -60,7 +60,7 @@ Classes are in the package `com.Singleton`;
 
           System.out.println(sing1);
 
-          //What the hell, the two instances have the same reference :o
+          //Now check out your console.... What the hell, the two instances have the same reference :o
         }
       }
     ```
