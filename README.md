@@ -65,3 +65,25 @@ Classes are in the package `com.Singleton`;
       }
     ```
 # Pattern Factory
+
+  Factory Pattern is one of the Creational Design pattern and it's widely used in  JDK as well as frameworks like
+Spring and Struts.
+This pattern is used when we have a super class with multiple sub-classes and based on the input, we need to return one of the sub-class.
+
+  ```java
+    import com.factory.FactoryClass ; //The factory class
+    import com.factory.PC; //sub-class
+    import com.factory.Server; //sub-class
+    //PC and Server classes extend from Computer.
+
+    public static void main(String[] args){
+
+      FactoryClass fc = new FactoryClass();
+      Computer comp1 = fc.getComputer("PC",16,499,4.3);
+      System.out.println(comp1);
+
+
+      Computer comp2 = fc.getComputer("Server",30,900,9);
+      System.out.println(comp2);
+
+    }
