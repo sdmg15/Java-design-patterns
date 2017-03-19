@@ -44,26 +44,26 @@ Pattern Singleton: One Class, one Instance.
 There are many implementations of this pattern, but we will implement the Thread Safe one.
 Classes are in the package `com.Singleton`;
 
-    ```java
+ ```java    
+ import  com.singleton.SingletonThreadSafe;
 
-        import  com.singleton.SingletonThreadSafe;
+   public class SingletonTest {
+      public static void main(String[] args){
 
-      public class SingletonTest {
-        public static void main(String[] args){
+        SingletonThreadSafe sing = SingletonThreadSafe.getInstance();
+        System.out.println(sing);
 
-          SingletonThreadSafe sing = SingletonThreadSafe.getInstance();
-          System.out.println(sing);
+        // Now let's instanciate another class
 
-          // Now let's instanciate another class
+        SingletonThreadSafe sing1 = SingletonThreadSafe.getInstance();
 
-          SingletonThreadSafe sing1 = SingletonThreadSafe.getInstance();
+        System.out.println(sing1);
 
-          System.out.println(sing1);
-
-          //Now check out your console.... What the hell, the two instances have the same reference :o
+        //Now check out your console.... What the hell, the two instances have the same reference :o
         }
       }
-    ```
+   ```
+   
 # Pattern Factory
 
   Factory Pattern is one of the Creational Design pattern and it's widely used in  JDK as well as frameworks like
