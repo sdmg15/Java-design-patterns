@@ -1,4 +1,4 @@
-# Java Designs Pattern
+# Java Design Patterns
 
 Here's is an implementation of some Design Patterns from scratch :p
 
@@ -44,8 +44,7 @@ Pattern Singleton: One Class, one Instance.
 There are many implementations of this pattern, but we will implement the Thread Safe one.
 Classes are in the package `com.Singleton`;
 
-    ```java
-
+      ```java
         import  com.singleton.SingletonThreadSafe;
 
       public class SingletonTest {
@@ -63,7 +62,8 @@ Classes are in the package `com.Singleton`;
           //Now check out your console.... What the hell, the two instances have the same reference :o
         }
       }
-    ```
+  ```
+
 # Pattern Factory
 
   Factory Pattern is one of the Creational Design pattern and it's widely used in  JDK as well as frameworks like
@@ -86,4 +86,25 @@ This pattern is used when we have a super class with multiple sub-classes and ba
       Computer comp2 = fc.getComputer("Server",30,900,9);
       System.out.println(comp2);
 
+    //Now you can see the output in your console.
     }
+ ```
+
+# Abstract Factory
+
+This is one of the Creational Pattern and almost similar to Factory Pattern except the fact that it's most like
+Factory of factories.
+Source files are in the package `com.abstractFactory`.
+
+```java
+
+    public class abstractFactoryTest{
+      public static void main(String[] args){
+
+        Computer c = ComputerFactory.getComputer(new PCFactory("4G","400G","2.9Ghz"));
+        /* ComputerFactory class contains static method getComputer(abstractFactory fac) */
+       System.out.print(c);
+
+      }
+    }
+````
