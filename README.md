@@ -104,4 +104,29 @@ Source files are in the package `com.abstractFactory`.
 
       }
     }
-````
+```
+
+
+# Pattern Builder
+
+Builder pattern is a creational design pattern as Factory Pattern and Abstract Factory Pattern. This pattern was introduced to solve some of the problems with Factory and Abstract Factory patterns when the Object contains a lot of attributes. This pattern deals with a static nested class and then copy all the arguments from the outer class to the Builder class.
+The sample code where we have a Computer class and ComputerBuilder to build it are available in the package `com.builder.Computer`.
+Here's a test program showing how to use Builder class to get object.
+
+
+```java
+
+  import com.builder.Computer;
+
+public class TestBuilderPattenr{
+  public static void main(String[] args){
+
+      Computer comp = new Computer.ComputerBuilder(
+      "500 GB","2 GB").setBluetoothEnabled(true)
+      .setGraphicsCardEnabled(true).build(); // -)
+      )
+  }
+
+}
+```
+There are really various implementations of this pattern in JDK.
