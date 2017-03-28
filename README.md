@@ -72,7 +72,7 @@ Factory design pattern is used when we have a super class with multiple sub-clas
 
 
     Now let's write the test class.
-    
+
   ```java
     import com.factory.FactoryClass ; //The factory class
     import com.factory.PC; //sub-class
@@ -92,13 +92,25 @@ Factory design pattern is used when we have a super class with multiple sub-clas
     //Now you can see the output in your console.
     }
  ```
+  This pattern provides some advantages such as :
+  * It provides approach to code for the interface rathan than the implementation.
+  * It removes the instantiation of the actual implementation classes from client code, making it more robust.
+  * It provides abstraction between implementation and client classes through inheritance.
+
+  As examples of its  implementation in JDK we have :
+  * java.util.Calendar, ResourceBundle() and NumberFormat getInstance();
+  * valueOf() method in wrapper classes like Boolean , Integer etc.
 
 # Abstract Factory
 
 This is one of the Creational Pattern and almost similar to Factory Pattern except the fact that it's most like
 Factory of factories.
-Source files are in the package `com.abstractFactory`.
+ If you're familiar with __factory design pattern in java__, you'll notice that we have a single Factory class that returns the different sub-classes based on the input provided and the factory class uses if-else or switch statement to achieve this.
+ Like our factory pattern post, we will use the same super class and sub-classes.
 
+  Codes are available in `com.abstractFactory`.
+  Here's the implementation of the test class:
+  
 ```java
 
     public class abstractFactoryTest{
