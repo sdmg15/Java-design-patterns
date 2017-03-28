@@ -110,7 +110,7 @@ Factory of factories.
 
   Codes are available in `com.abstractFactory`.
   Here's the implementation of the test class:
-  
+
 ```java
 
     public class abstractFactoryTest{
