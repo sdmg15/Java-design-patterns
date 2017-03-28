@@ -58,12 +58,21 @@ We'll implement the thread safe one here. Classes are in the package `com.single
         }
       }
   ```
-# Pattern Factory
+### Pattern Factory
 
-  Factory Pattern is one of the Creational Design pattern and it's widely used in  JDK as well as frameworks like
-Spring and Struts.
-This pattern is used when we have a super class with multiple sub-classes and based on the input, we need to return one of the sub-class.
+Factory design pattern is used when we have a super class with multiple sub-classes and based on input, we need to return one of the sub-class. This pattern take out the responsibility of instantiation of a class from client program   to   the   factory   class.   Let’s   first   learn   how   to   implement   factory  pattern in java and then we will learn its benefits and we will see its usage in JDK.
 
+      * Super Class
+         Super class in factory pattern can be an interface, abstract class or a normaljava class. For our example, we have super class as abstract class with overridden toString() method for testing purpose.
+         see `com.factory`.
+      * sub-classes
+      Let’s  say  we  have  two  sub-classes PC and Server with implementation in `com.factory`
+
+      Here's what we have in image :
+
+
+    Now let's write the test class.
+    
   ```java
     import com.factory.FactoryClass ; //The factory class
     import com.factory.PC; //sub-class
