@@ -69,6 +69,7 @@ Factory design pattern is used when we have a super class with multiple sub-clas
       Let’s  say  we  have  two  sub-classes PC and Server with implementation in `com.factory`
 
       Here's what we have in image :
+        [](http://zupimages.net/up/17/13/7w9z.png)
 
 
     Now let's write the test class.
