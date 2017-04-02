@@ -28,6 +28,7 @@ __Java Design Patterns__ are divived into tree parts : *Creational*, *Structural
   4. Prototype Pattern
 
 ### Pattern Singleton
+
 Pattern Singleton: > One Class, one Instance.
   Singleton is one of the Gangs of Four Design patterns and comes in the Creational Design Pattern category.
 Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machine. The singleton class must provide a global access point to get the instance of the class. Singleton pattern is used for logging, driver objects, caching and thread pool. Singleton design pattern is also used in other design patterns like __Abstract Factory__, __Builder__, __Prototype__, __Facade__ etc. Singleton design pattern is used in core java classes also, for example __java.lang.Runtime__ , __java.awt.Desktop__.
@@ -102,7 +103,7 @@ Factory design pattern is used when we have a super class with multiple sub-clas
   * java.util.Calendar, ResourceBundle() and NumberFormat getInstance();
   * valueOf() method in wrapper classes like Boolean , Integer etc.
 
-# Abstract Factory
+### Abstract Factory
 
 This is one of the Creational Pattern and almost similar to Factory Pattern except the fact that it's most like
 Factory of factories.
@@ -126,7 +127,7 @@ Factory of factories.
 ```
 
 
-# Pattern Builder
+### Pattern Builder
 
 Builder pattern is a creational design pattern as Factory Pattern and Abstract Factory Pattern. This pattern was introduced to solve some of the problems with Factory and Abstract Factory patterns when the Object contains a lot of attributes. This pattern deals with a static nested class and then copy all the arguments from the outer class to the Builder class.
 The sample code where we have a Computer class and ComputerBuilder to build it are available in the package `com.builder.Computer`.
@@ -148,4 +149,70 @@ public class TestBuilderPattenr{
 
 }
 ```
-There are really various implementations of this pattern in JDK.
+There are really various implementations of this pattern in JDK : java.lang.StringBuilder#append() (unsynchronized) java.lang.StringBuffer#append() (synchronized) .
+
+### Pattern Prototype
+
+Prototype pattern is one of the Creational Design pattern, so it provides a mechanism of object creation. Prototype pattern is used when the Object creation is a costly affair and requires a lot of time and resources and you have a similar object already existing. So this pattern provides a mechanism to copy the original object to a new object and then modify it according to our needs. This pattern uses java cloning to copy the object.
+
+```java
+
+import java.util.ArrayList;
+import java.util.List;
+public class Users implements Cloneable{
+    private List<String> empList;
+
+    public Users(){
+
+      empList = new ArrayList<>();
+      }
+
+public Users(List<String> list){
+this.empList=list;
+}
+
+//read some data from the database.
+public void loadData(){
+    empList.add("japak");
+    empList.add("King");
+    empList.add("David");
+    empList.add("Romeo");
+}
+
+public List<String> getEmpList() {
+    return empList;
+}
+
+  @Override
+  public Object clone() throws CloneNotSupportedException{
+        List<String> temp = new ArrayList<String>();
+        for(String s : this.getEmpList()){
+          temp.add(s);
+          }
+          return new Users(temp);
+}
+}
+
+ //Notice that the clone method is overridden to provide a deep copy of the users list.
+```
+
+Here's the program that will show the benefit of the Prototype pattern usage.
+
+```java
+public class PrototypePatternTest {
+  public static void main(String[] args) throws CloneNotSupportedException {
+        Users usr = new Users();
+          user.loadData();
+//Use the clone method to get the User object
+        Users useNew = (Users) user.clone();
+        Users useNew1 = (Users) user.clone();
+        List<String> list = useNew.getEmpList();
+        list.add("John");
+
+        List<String> list1 = usersNew1.getEmpList();
+        list1.remove("Pankaj");
+        System.out.println("users List: "+users.getEmpList());
+        System.out.println("users New List: "+list);
+        System.out.println("users New1 List: "+list1);
+}
+}
