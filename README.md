@@ -15,17 +15,17 @@ __What is a Design Pattern ?__
 
 __Java Design Patterns__ are divived into tree parts : *Creational*, *Structural* and *Behavioral*.
 
-# CREATIONAL DESIGN PATTERNS
+## CREATIONAL DESIGN PATTERNS
 
   Creational design pattens provide solution to instatiate an object in the best possible way for specific situations.
   The basic form of object creation could result in design problems or add unwanted complexity to the design. Creational design patterns solve this problem by __controlling the object creation__ by different ways.
-  There are five creational design patterns that we will discuss :
+  There are five creational design patterns that we will discuss on :
 
-  1 .Singleton Pattern
-  2. Factory Pattern
-  3. Abstract Factory Pattern
-  4. Builder Pattern
-  4. Prototype Pattern
+* Singleton Pattern
+* Factory Pattern
+* Abstract Factory Pattern
+* Builder Pattern
+* Prototype Pattern
 
 ### Pattern Singleton
 
@@ -63,17 +63,14 @@ We'll implement the thread safe one here. Classes are in the package `com.single
 
 Factory design pattern is used when we have a super class with multiple sub-classes and based on input, we need to return one of the sub-class. This pattern take out the responsibility of instantiation of a class from client program   to   the   factory   class.   Let’s   first   learn   how   to   implement   factory  pattern in java and then we will learn its benefits and we will see its usage in JDK.
 
-      * Super Class
-         Super class in factory pattern can be an interface, abstract class or a normaljava class. For our example, we have super class as abstract class with overridden toString() method for testing purpose.
-         see `com.factory`.
-      * sub-classes
-      Let’s  say  we  have  two  sub-classes PC and Server with implementation in `com.factory`
-
-      Here's what we have in image :
-        [](http://zupimages.net/up/17/13/7w9z.png)
-
-
-    Now let's write the test class.
+* Super Class
+  Super class in factory pattern can be an interface, abstract class or a normaljava class. For our example, we have super class as abstract class with overridden toString() method for testing purpose.
+  see `com.factory`.
+* sub-classes
+    Let’s  say  we  have  two  sub-classes PC and Server with implementation in `com.factory`
+   Here's what we have in image :
+  [](http://zupimages.net/up/17/13/7w9z.png)
+  Now let's write the test class.
 
   ```java
     import com.factory.FactoryClass ; //The factory class
@@ -214,5 +211,6 @@ public class PrototypePatternTest {
         System.out.println("users List: "+users.getEmpList());
         System.out.println("users New List: "+list);
         System.out.println("users New1 List: "+list1);
+      }
 }
-}
+```
