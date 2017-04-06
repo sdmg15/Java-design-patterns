@@ -28,8 +28,9 @@ __Java Design Patterns__ are divived into tree parts : *Creational*, *Structural
 * Prototype Pattern
 
 ### Pattern Singleton
+ 
+ Pattern Singleton: > One Class, one Instance.
 
-Pattern Singleton: > One Class, one Instance.
   Singleton is one of the Gangs of Four Design patterns and comes in the Creational Design Pattern category.
 Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machine. The singleton class must provide a global access point to get the instance of the class. Singleton pattern is used for logging, driver objects, caching and thread pool. Singleton design pattern is also used in other design patterns like __Abstract Factory__, __Builder__, __Prototype__, __Facade__ etc. Singleton design pattern is used in core java classes also, for example __java.lang.Runtime__ , __java.awt.Desktop__.
 
@@ -64,14 +65,14 @@ We'll implement the thread safe one here. Classes are in the package `com.single
 
 Factory design pattern is used when we have a super class with multiple sub-classes and based on input, we need to return one of the sub-class. This pattern take out the responsibility of instantiation of a class from client program   to   the   factory   class.   Let’s   first   learn   how   to   implement   factory  pattern in java and then we will learn its benefits and we will see its usage in JDK.
 
-* Super Class
-  Super class in factory pattern can be an interface, abstract class or a normaljava class. For our example, we have super class as abstract class with overridden toString() method for testing purpose.
+* Super Class : Super class in factory pattern can be an interface, abstract class or a normaljava class. For our example, we have super class as abstract class with overridden toString() method for testing purpose.
   see `com.factory`.
-* sub-classes
-    Let’s  say  we  have  two  sub-classes PC and Server with implementation in `com.factory`
-   Here's what we have in image :
+* sub-classes: Let’s  say  we  have  two  sub-classes PC and Server with implementation in `com.factory`
+
+Here's what we have in image :
   [](http://zupimages.net/up/17/13/7w9z.png)
-  Now let's write the test class.
+
+Now let's write the test class.
 
   ```java
     import com.factory.FactoryClass ; //The factory class
@@ -99,18 +100,16 @@ This pattern provides some advantages such as :
   * It provides abstraction between implementation and client classes through inheritance.
 
   As examples of its  implementation in JDK we have :
-  * java.util.Calendar, ResourceBundle() and NumberFormat getInstance();
-  * valueOf() method in wrapper classes like Boolean , Integer etc.
+  
+  * *java.util.Calendar*, *ResourceBundle()* and *NumberFormat getInstance()*;
+  * *valueOf()* method in wrapper classes like Boolean , Integer etc.
 
 ### Abstract Factory
 
 This is one of the Creational Pattern and almost similar to Factory Pattern except the fact that it's most like
-Factory of factories.
- If you're familiar with __factory design pattern in java__, you'll notice that we have a single Factory class that returns the different sub-classes based on the input provided and the factory class uses if-else or switch statement to achieve this.
- Like our factory pattern post, we will use the same super class and sub-classes.
-
+Factory of factories. If you're familiar with __factory design pattern in java__ , you'll notice that we have a single Factory class that returns the different sub-classes based on the input provided and the factory class uses if-else or switch statement to achieve this. Like our factory pattern post, we will use the same super class and sub-classes.
   Codes are available in `com.abstractFactory`.
-  Here's the implementation of the test class:
+Here's the implementation of the test class:
 
 ```java
 
@@ -124,7 +123,6 @@ Factory of factories.
       }
     }
 ```
-
 
 ### Pattern Builder
 
