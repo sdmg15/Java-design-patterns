@@ -34,6 +34,7 @@ Pattern Singleton: > One Class, one Instance.
 Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machine. The singleton class must provide a global access point to get the instance of the class. Singleton pattern is used for logging, driver objects, caching and thread pool. Singleton design pattern is also used in other design patterns like __Abstract Factory__, __Builder__, __Prototype__, __Facade__ etc. Singleton design pattern is used in core java classes also, for example __java.lang.Runtime__ , __java.awt.Desktop__.
 
 To implement Singleton pattern, there are really many approaches but all of them have following common concepts:
+
 * A private constructor to avoid instantiation of the class,
 * A private static variable from the same class that's the only instance of the class.
 * public static method that returns the instance of the class, this is the global access point for the outer world to
@@ -91,7 +92,8 @@ Factory design pattern is used when we have a super class with multiple sub-clas
     //Now you can see the output in your console.
     }
  ```
-  This pattern provides some advantages such as :
+This pattern provides some advantages such as :
+
   * It provides approach to code for the interface rathan than the implementation.
   * It removes the instantiation of the actual implementation classes from client code, making it more robust.
   * It provides abstraction between implementation and client classes through inheritance.
