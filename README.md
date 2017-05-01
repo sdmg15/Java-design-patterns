@@ -4,20 +4,20 @@ Design Patterns are very popular among software developers. A design pattern is 
 common software problem.
 
 Some of benefits of using design patterns are :
-  * Design patterns are already defined and provides industry standard approach to solve reccuring problem,
-    so it saves time if we senibly use  the design pattern .
-  * Using design pattern promotes reusability that leads to more robust and hightly maintenable code.
-  * Since design patterns are already defined, it makes out code easy to understand and debug. It lead to faster developement and new members of team understand it easily.
+  * Design patterns are already defined and provides industry standard approach to solve recurring problem,
+    so it saves time if we  use  the design pattern .
+  * Using design pattern promotes re-usability that leads to more robust and highly maintainable code.
+  * Since design patterns are already defined, it makes out code easy to understand and debug. It lead to faster development and new members of team understand it easily.
 
 
 __What is a Design Pattern ?__
    > A software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design --- Wikipedia
 
-__Java Design Patterns__ are divived into tree parts : *Creational*, *Structural* and *Behavioral*.
+__Java Design Patterns__ are divided into tree parts : *Creational*, *Structural* and *Behavioral*.
 
 ## CREATIONAL DESIGN PATTERNS
 
-  Creational design pattens provide solution to instatiate an object in the best possible way for specific situations.
+  Creational design pattens provide solution to instantiate an object in the best possible way for specific situations.
   The basic form of object creation could result in design problems or add unwanted complexity to the design. Creational design patterns solve this problem by __controlling the object creation__ by different ways.
   There are five creational design patterns that we will discuss on :
 
@@ -28,11 +28,11 @@ __Java Design Patterns__ are divived into tree parts : *Creational*, *Structural
 * Prototype Pattern
 
 ### Pattern Singleton
- 
+
  Pattern Singleton: > One Class, one Instance.
 
   Singleton is one of the Gangs of Four Design patterns and comes in the Creational Design Pattern category.
-Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machine. The singleton class must provide a global access point to get the instance of the class. Singleton pattern is used for logging, driver objects, caching and thread pool. Singleton design pattern is also used in other design patterns like __Abstract Factory__, __Builder__, __Prototype__, __Facade__ etc. Singleton design pattern is used in core java classes also, for example __java.lang.Runtime__ , __java.awt.Desktop__.
+Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the Java virtual machine. The singleton class must provide a global access point to get the instance of the class. Singleton pattern is used for logging, driver objects, caching and thread pool. Singleton design pattern is also used in other design patterns like __Abstract Factory__, __Builder__, __Prototype__, __Facade__ etc. Singleton design pattern is used in core Java classes also, for example __java.lang.Runtime__ , __java.awt.Desktop__.
 
 To implement Singleton pattern, there are really many approaches but all of them have following common concepts:
 
@@ -63,9 +63,9 @@ We'll implement the thread safe one here. Classes are in the package `com.single
   ```
 ### Pattern Factory
 
-Factory design pattern is used when we have a super class with multiple sub-classes and based on input, we need to return one of the sub-class. This pattern take out the responsibility of instantiation of a class from client program   to   the   factory   class.   Let’s   first   learn   how   to   implement   factory  pattern in java and then we will learn its benefits and we will see its usage in JDK.
+Factory design pattern is used when we have a super class with multiple sub-classes and based on input, we need to return one of the sub-class. This pattern take out the responsibility of instantiation of a class from client program   to   the   factory   class.   Let’s   first   learn   how   to   implement   factory  pattern in Java and then we will learn its benefits and we will see its usage in JDK.
 
-* Super Class : Super class in factory pattern can be an interface, abstract class or a normaljava class. For our example, we have super class as abstract class with overridden toString() method for testing purpose.
+* Super Class : Super class in factory pattern can be an interface, abstract class or a normal Java class. For our example, we have super class as abstract class with overridden toString() method for testing purpose.
   see `com.factory`.
 * sub-classes: Let’s  say  we  have  two  sub-classes PC and Server with implementation in `com.factory`
 
@@ -95,12 +95,12 @@ Now let's write the test class.
  ```
 This pattern provides some advantages such as :
 
-  * It provides approach to code for the interface rathan than the implementation.
+  * It provides approach to code for the interface rather than the implementation.
   * It removes the instantiation of the actual implementation classes from client code, making it more robust.
   * It provides abstraction between implementation and client classes through inheritance.
 
   As examples of its  implementation in JDK we have :
-  
+
   * *java.util.Calendar*, *ResourceBundle()* and *NumberFormat getInstance()*;
   * *valueOf()* method in wrapper classes like Boolean , Integer etc.
 
@@ -150,7 +150,7 @@ There are really various implementations of this pattern in JDK : java.lang.Stri
 
 ### Pattern Prototype
 
-Prototype pattern is one of the Creational Design pattern, so it provides a mechanism of object creation. Prototype pattern is used when the Object creation is a costly affair and requires a lot of time and resources and you have a similar object already existing. So this pattern provides a mechanism to copy the original object to a new object and then modify it according to our needs. This pattern uses java cloning to copy the object.
+Prototype pattern is one of the Creational Design pattern, so it provides a mechanism of object creation. Prototype pattern is used when the Object creation is a costly affair and requires a lot of time and resources and you have a similar object already existing. So this pattern provides a mechanism to copy the original object to a new object and then modify it according to our needs. This pattern uses Java cloning to copy the object.
 
 ```java
 
