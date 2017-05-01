@@ -214,3 +214,8 @@ public class PrototypePatternTest {
       }
 }
 ```
+
+## STRUCTURAL DESIGN PATTERNS 
+
+ Structural Patterns provide different ways to create a class structure, for example using inheritance and composition
+ to create a large object from small objects.
