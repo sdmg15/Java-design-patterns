@@ -208,14 +208,123 @@ public class PrototypePatternTest {
 
         List<String> list1 = usersNew1.getEmpList();
         list1.remove("Pankaj");
-        System.out.println("users List: "+users.getEmpList());
+        System.out.println("users List: "+ users.getEmpList());
         System.out.println("users New List: "+list);
         System.out.println("users New1 List: "+list1);
       }
 }
 ```
 
-## STRUCTURAL DESIGN PATTERNS 
+## STRUCTURAL DESIGN PATTERNS
 
  Structural Patterns provide different ways to create a class structure, for example using inheritance and composition
  to create a large object from small objects.
+
+### Adapter  Pattern
+
+This pattern is used in such a way that two unrelated interfaces can work together. The object that joins these   unrelated interfaces is called Adapter. As a real life example, we can think of a mobile charger as an adapter because mobile battery needs 3 Volts to charge but the normal socket produces either 120V (US) or 240V (India). So the mobile charger works as an adapter between mobile charging socket and the wall socket.
+First of all we'll have two classes : Volt - to measure volts) and Socket :
+
+```java
+
+public class Volt {
+  private int volts;
+      public Volt(int v){
+        this.volts=v;
+        }
+        public int getVolts() {
+          return volts;
+        }
+   public void setVolts(int volts) {
+     this.volts = volts;
+    }
+}
+
+
+public class Socket {
+  public Volt getVolt(){
+  return new Volt(120);
+}
+
+}
+```
+Now we want to build an adapter that can produce 3 volts, 12 volts and default 120 volts. So first of all we will  create an adapter interface with these methods.
+
+```java
+public interface SocketAdapter {
+public Volt get120Volt();
+public Volt get12Volt();
+public Volt get3Volt();
+}
+
+```
+
+while implementing this pattern, there are two approaches : one that deals with inheritance and another one that deals with Composition.Note that they are almost the same thus, here we'll deal with one with inheritance. Let's implement out adapter  class !
+
+
+```java
+public class SocketClassAdapterImpl extends Socket implements
+    SocketAdapter{
+    @Override
+    public Volt get120Volt() {
+      return getVolt();
+    }
+    @Override
+    public Volt get12Volt() {
+      Volt v= getVolt();
+      return convertVolt(v,10);
+    }
+    @Override
+    public Volt get3Volt() {
+      Volt v= getVolt();
+      return convertVolt(v,40);
+    }
+    private Volt convertVolt(Volt v, int i) {
+        return new Volt(v.getVolts()/i);
+    }
+}
+```
+Now let's see how all this work ! Here's a test Main function to illustrate.
+
+
+```java
+
+public class AdapterPatternTest {
+
+  public static void main(String[] args) {
+      testClassAdapter();
+
+      testAdapter();
+
+      //The results goes in your console :)
+}
+
+private static void testAdapter() {
+  SocketAdapter sockAdapter = new SocketObjectAdapterImpl();
+
+  Volt v3 = getVolt(sockAdapter,3);
+
+  Volt v12 = getVolt(sockAdapter,12);
+
+  Volt v120 = getVolt(sockAdapter,120);
+
+  System.out.println("v3 volts using Object Adapter="+v3.getVolts());
+  System.out.println("v12 volts using Object Adapter="+v12.getVolts());
+  System.out.println("v120 volts using Object Adapter="+v120.getVolts());
+}
+
+private static Volt getVolt(SocketAdapter sockAdapter, int i) {
+  switch (i){
+    case 3: return sockAdapter.get3Volt();
+    case 12: return sockAdapter.get12Volt();
+    case 120: return sockAdapter.get120Volt();
+    default: return sockAdapter.get120Volt();
+    }
+
+
+}
+
+}
+```
+
+### Composite Pattern 
