@@ -326,5 +326,6 @@ private static Volt getVolt(SocketAdapter sockAdapter, int i) {
 
 }
 ```
+This pattern has many usage in the JDK :  __java.util.Arrays#asList() java.io.InputStreamReader(InputStream)__ (returns a Reader),__java.io.OutputStreamWriter(OutputStream)__ (returns a Writer).
 
-### Composite Pattern 
+### Composite Pattern   
