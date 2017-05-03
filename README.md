@@ -259,7 +259,7 @@ public Volt get3Volt();
 
 ```
 
-while implementing this pattern, there are two approaches : one that deals with inheritance and another one that deals with Composition.Note that they are almost the same thus, here we'll deal with one with inheritance. Let's implement out adapter  class !
+while implementing this pattern, there are two approaches : one that deals with inheritance and another one that deals with Composition. Note that they are almost the same thus, here we'll deal with one with inheritance. Let's implement out adapter  class !
 
 
 ```java
@@ -320,12 +320,11 @@ private static Volt getVolt(SocketAdapter sockAdapter, int i) {
     case 120: return sockAdapter.get120Volt();
     default: return sockAdapter.get120Volt();
     }
-
-
 }
-
 }
 ```
-This pattern has many usage in the JDK :  __java.util.Arrays#asList() java.io.InputStreamReader(InputStream)__ (returns a Reader),__java.io.OutputStreamWriter(OutputStream)__ (returns a Writer).
+This pattern has many usage in the JDK :
+ * __java.util.Arrays#asList() java.io.InputStreamReader(InputStream)__ (returns a Reader),
+ * __java.io.OutputStreamWriter(OutputStream)__ (returns a Writer).
 
 ### Composite Pattern   
