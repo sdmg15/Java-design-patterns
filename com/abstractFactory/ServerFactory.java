@@ -3,7 +3,7 @@ package com.factory;
 /**
  * Created by sdmg15 on 21/03/17.
  */
-public class ServerFactory {
+public class ServerFactory implements AbstractFactory{
 
 
     private String ram;
