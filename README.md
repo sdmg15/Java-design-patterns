@@ -13,7 +13,7 @@ Some of benefits of using design patterns are :
 __What is a Design Pattern ?__
    > A software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design --- Wikipedia
 
-__Java Design Patterns__ are divided into tree parts : *Creational*, *Structural* and *Behavioral*.
+__Java Design Patterns__ are divided into tree parts : __Creational__, __Structural__ and __Behavioral__.
 
 ## CREATIONAL DESIGN PATTERNS
 
