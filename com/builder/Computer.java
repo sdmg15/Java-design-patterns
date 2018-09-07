@@ -35,11 +35,12 @@ public boolean isBluetoothEnabled(){
 
 private Computer(ComputerBuilder builder){
 
-  this.ram = com.builder;
-  this.hdd = com.builder;
+  this.ram = builder.ram;
+  this.hdd = builder.hdd;
+  
+  this.isGraphicsCardEnable= builder.isGraphicsCardEnable;
+  this.isBluetoothEnabled= builder.isBluetoothEnabled;
 
-  this.isGraphicsCardEnable = com.isGraphicsCardEnable;
-  this.isBluetoothEnabled = com.isBluetoothEnabled;
 }
 
 
